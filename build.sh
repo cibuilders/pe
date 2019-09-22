@@ -8,8 +8,8 @@ get_sources() {
   repo sync -c --no-tags --no-clone-bundle -j8 -q
   git clone https://github.com/AmolAmrit/device_xiaomi_kenzo.git -b pie device/xiaomi/kenzo
   git clone https://github.com/AmolAmrit/device_xiaomi_msm8956-common -b pie device/xiaomi/msm8956-common
-  git clone https://github.com/AmolAmrit/Escrima_kernel_xiaomi_msm8956 -b pie kernel/xiaomi/msm8956
-  git clone https://github.com/AmolAmrit/proprietary_vendor_xiaomi -b pie vendor/xiaomi
+  git clone https://github.com/AmolAmrit/Escrima_kernel_xiaomi_msm8956 -b pie kernel/xiaomi/msm8956 --depth=1
+  git clone https://github.com/AmolAmrit/proprietary_vendor_xiaomi -b pie vendor/xiaomi --depth=1
 
   cd ..
 }
@@ -20,7 +20,7 @@ build_firmware() {
   source build/envsetup.sh
   echo 'export USE_CCACHE=1' >> ~/.bashrc
   source ~/.bashrc
-  ~/aosp/prebuilts/misc/linux-x86/ccache/ccache -M 50G
+  ccache -M 50
   export ALLOW_MISSING_DEPENDENCIES=true
   export KBUILD_BUILD_USER="AnggaR96s"
   export KBUILD_BUILD_HOST="CI-BuildBot"
