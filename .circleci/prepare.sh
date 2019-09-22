@@ -11,7 +11,7 @@ sudo apt-get install -y openjdk-8-jdk
 sudo apt-get install -y openjdk-8-jre
 
 sudo apt-get install --no-install-recommends -y \
-binutils-static curl figlet git-core libesd0-dev libwxgtk2.8-dev schedtool \
+curl figlet git-core libesd0-dev python schedtool \
 git-core gnupg flex bison gperf build-essential zip curl \
 zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev \
 x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils \
