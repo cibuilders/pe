@@ -10,10 +10,6 @@ get_sources() {
   git clone https://github.com/AmolAmrit/device_xiaomi_msm8956-common -b pie device/xiaomi/msm8956-common
   git clone https://github.com/AmolAmrit/Escrima_kernel_xiaomi_msm8956 -b pie kernel/xiaomi/msm8956
   git clone https://github.com/AmolAmrit/proprietary_vendor_xiaomi -b pie vendor/xiaomi
-  git clone https://github.com/AnggaR96s/hardware_qcom_display -b pie hardware/qcom/display-caf/msm8952
-  git clone https://github.com/AnggaR96s/hardware_qcom_audio -b pie hardware/qcom/audio-caf/msm8952
-  git clone https://github.com/AnggaR96s/hardware_qcom_media -b lineage-16.0-caf-8952 hardware/qcom/media-caf/msm8952
-  git clone https://github.com/LineageOS/android_packages_resources_devicesettings -b lineage-16.0 packages/resources/devicesettings
 
   cd ..
 }
@@ -25,7 +21,9 @@ build_firmware() {
   lunch aosp_kenzo-userdebug
   #mka bacon
   mka aex -j8
-
+  #upload
+  cd out/target/product/xiaomi/kenzo
+  curl --upload-file ./AospExtended-*-kenzo*.zip https://transfer.sh
   cd ..
 }
 

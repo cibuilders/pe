@@ -11,7 +11,7 @@ prepare() {
 release() {
   mkdir release
   # TODO: loop copy for multi devices.
-  cp aosp/out/target/product/kenzo/AospExtended-*.zip* release/ 2>/dev/null || true
+  cp aosp/out/target/product/xiaomi/kenzo/AospExtended-*.zip* release/ 2>/dev/null || true
 }
 
 deploy() {
