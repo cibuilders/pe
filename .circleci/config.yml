@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/ci
+    machine: true
+    environment:
+      USE_CCACHE: 1
+      ANDROID_JACK_VM_ARGS: "-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx6G"
+    steps:
+      - checkout
+      - run:
+          name: Prepare
+          command: ./.circleci/prepare.sh
+      - run:
+          name: Run build
+          command: ./build.sh
+          no_output_timeout: 60m
+      - run:
+          name: Deploy
+          command: ./deploy.sh
+      - store_artifacts:
+          path: release
+          destination: out
