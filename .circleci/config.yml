@@ -12,6 +12,18 @@ jobs:
           name: Prepare
           command: ./.circleci/prepare.sh
       - run:
+          name: Prepare
+          command: ./.circleci/env.sh
+      - run:
+          name: Prepare
+          command: ./.circleci/make.sh
+      - run:
+          name: Prepare
+          command: ./.circleci/ninja.sh
+      - run:
+          name: Prepare
+          command: ./.circleci/ccache.sh
+      - run:
           name: Run build
           command: ./build.sh
           no_output_timeout: 60m
