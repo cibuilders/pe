@@ -2,8 +2,8 @@ version: 2
 jobs:
   build:
     working_directory: ~/ci
-    docker:
-      - image: ubuntu:18.04
+    machine:
+      image: ubuntu-1604:201903-01
     environment:
       USE_CCACHE: 1
       ANDROID_JACK_VM_ARGS: "-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx6G"
