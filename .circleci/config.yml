@@ -10,6 +10,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Bash
+          command: ./.circleci/bash.sh
+      - run:
           name: Prepare
           command: ./.circleci/prepare.sh
       - run:
