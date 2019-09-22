@@ -9,17 +9,14 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Prepare
-          command: ./.circleci/prepare.sh
+          name: ccache
+          command: ./.circleci/ccache.sh
       - run:
-          name: Prepare
-          command: ./.circleci/make.sh
-      - run:
-          name: Prepare
+          name: ninja
           command: ./.circleci/ninja.sh
       - run:
           name: Prepare
-          command: ./.circleci/ccache.sh
+          command: ./.circleci/prepare.sh
       - run:
           name: Run build
           command: ./build.sh
