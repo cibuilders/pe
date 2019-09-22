@@ -7,6 +7,14 @@ echo 'DPkg::Options "--force-confnew";' | sudo tee -a /etc/apt/apt.conf.d/90non-
 
 # dependencies
 sudo apt-get update
+sudo apt-get install -y openjdk-8-jdk
+sudo apt-get install -y openjdk-8-jre
+
+sudo apt-get install --no-install-recommends -y \
+git-core gnupg flex bison gperf build-essential zip curl \
+zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev \
+x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils \
+xsltproc unzip
 sudo apt-get install --no-install-recommends -y \
   apt-utils dialog locales sudo ca-certificates ccache parallel \
   net-tools netcat nano bzip2 gzip tar xz-utils curl wget \

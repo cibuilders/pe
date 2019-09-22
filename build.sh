@@ -18,14 +18,23 @@ build_firmware() {
   cd aosp
 
   source build/envsetup.sh
+  echo 'export USE_CCACHE=1' >> ~/.bashrc
+  source ~/.bashrc
+  ~/aosp/prebuilts/misc/linux-x86/ccache/ccache -M 50G
+  export ALLOW_MISSING_DEPENDENCIES=true
+  export KBUILD_BUILD_USER="AnggaR96s"
+  export KBUILD_BUILD_HOST="CI-BuildBot"
   lunch aosp_kenzo-userdebug
   #mka bacon
   mka aex -j8
-  #upload
-  cd out/target/product/xiaomi/kenzo
-  curl --upload-file ./AospExtended-*-kenzo*.zip https://transfer.sh
   cd ..
+}
+
+upload() {
+  cd aosp/out/target/product/xiaomi/kenzo
+  curl --upload-file ./AospExtended-*-kenzo*.zip https://transfer.sh
 }
 
 get_sources
 build_firmware
+upload
