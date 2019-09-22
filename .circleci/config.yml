@@ -1,6 +1,8 @@
 version: 2
 jobs:
   build:
+    docker: # executor type
+      - image: buildpack-deps:bionic
     working_directory: ~/ci
     machine: true
     environment:
