@@ -13,9 +13,6 @@ jobs:
           command: ./.circleci/prepare.sh
       - run:
           name: Prepare
-          command: ./.circleci/env.sh
-      - run:
-          name: Prepare
           command: ./.circleci/make.sh
       - run:
           name: Prepare

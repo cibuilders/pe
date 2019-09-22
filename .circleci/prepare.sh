@@ -11,6 +11,7 @@ sudo apt-get install -y openjdk-8-jdk
 sudo apt-get install -y openjdk-8-jre
 
 sudo apt-get install --no-install-recommends -y \
+binutils-static curl figlet git-core libesd0-dev libwxgtk2.8-dev schedtool \
 git-core gnupg flex bison gperf build-essential zip curl \
 zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev \
 x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils \
@@ -24,6 +25,14 @@ sudo apt-get install --no-install-recommends -y \
   libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool \
   squashfs-tools xsltproc openjdk-8-jdk python zip unzip zlib1g-dev \
   libc6-dev-i386 x11proto-core-dev libx11-dev libgl1-mesa-dev make bc
+
+sudo apt-get update -y
+sudo apt-get install -y adb autoconf automake axel bc bison build-essential clang cmake expat fastboot flex \
+g++ g++-multilib gawk gcc gcc-multilib gnupg gperf htop imagemagick lib32ncurses5-dev lib32z1-dev libtinfo5 \
+libc6-dev libcap-dev libexpat1-dev libgmp-dev liblz4-* liblzma* libmpc-dev libmpfr-dev \
+libncurses5-dev libsdl1.2-dev libssl-dev libtool libxml2 libxml2-utils lzma* lzop maven ncftp ncurses-dev \
+patch patchelf pkg-config pngcrush pngquant python python-all-dev re2c schedtool squashfs-tools subversion texinfo \
+unzip w3m xsltproc zip zlib1g-dev
 sudo apt-get clean
 
 # repo
